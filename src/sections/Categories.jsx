@@ -1,8 +1,20 @@
 import React from 'react';
 import MobCategories from './mobCategories';
 import LapCategories from './LapCategories';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const Categories = () => {
+function Categories() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const hasReloaded = sessionStorage.getItem('hasReloaded');
+
+    if (location.pathname === '/' && !hasReloaded) {
+      sessionStorage.setItem('hasReloaded', 'true');
+      window.location.reload();
+    }
+  }, [location])
   return (
     <>
       {/* Show on large screens and up */}

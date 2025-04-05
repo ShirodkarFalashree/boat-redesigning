@@ -1,68 +1,56 @@
 import React from "react";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+import ModelViewer from "../ModelViewer";
 
 const LapCategories = () => {
   const navigate = useNavigate();
 
   return (
-    // <div className="relative bg-[radial-gradient(circle,_rgba(139,130,88,1)_0%,_rgba(41,86,89,1)_57%,_rgba(0,0,0,1)_98%)] h-screen flex items-center justify-center overflow-hidden">
-    <div className="relative bg-red-300 h-screen flex items-center justify-center overflow-hidden">
-      {/* Rotating flower wrapper */}
-      <div className="relative w-[600px] h-[600px]">
-        {/* Center Circle (non-rotating) */}
-        <div className="w-[150px] h-[150px] rounded-full items-center flex justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 ">
-          <img src={logo} alt="" />
+    <div className="relative bg-gradient-to-br from-gray-900 via-indigo-900 to-black h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Logo at the top */}
+      <div className="mb-8">
+        <div className="w-[120px] h-[120px] rounded-full bg-gray-800/80 backdrop-blur-sm flex items-center justify-center border border-indigo-500/30">
+          <img src={logo} alt="Logo" className="w-3/4 h-3/4 object-contain" />
         </div>
+      </div>
 
-        {/* 5 Petals - these will rotate with the wrapper */}
-
-        <div
+      {/* Horizontal row of categories */}
+      <div className="flex justify-center items-center space-x-6">
+        <CategoryItem
+          modelPath="/models/headphones2.glb"
           onClick={() => navigate("/headphone")}
-          className="absolute -top-5 left-1/2 transform -translate-x-1/2"
-        >
-          <CategoryCircle label="Headphones" />
-        </div>
-
-        <div
+        />
+        <CategoryItem
+          modelPath="/models/smartwatch.glb"
           onClick={() => navigate("/smart-watch")}
-          className="absolute top-[40%] left-[90%] transform -translate-x-1/2 -translate-y-1/2"
-        >
-          <CategoryCircle label="Smart Watch"  />
-        </div>
-
-        <div
+        />
+        <CategoryItem
+          modelPath="/models/earpod.glb"
           onClick={() => navigate("/earbuds")}
-          className="absolute -bottom-6 left-[70%] transform -translate-x-1/2"
-        >
-          <CategoryCircle label="Earpods"  />
-        </div>
-
-        <div
+        />
+        <CategoryItem
+          modelPath="/models/powerbank2.glb"
           onClick={() => navigate("/powerbank")}
-          className="absolute -bottom-6 left-[25%] transform -translate-x-1/2"
-        >
-          <CategoryCircle label="Powerbank"  />
-        </div>
-
-        <div
+        />
+        <CategoryItem
+          modelPath="/models/neckband.glb"
           onClick={() => navigate("/neckband")}
-          className="absolute top-[40%] left-[10%] transform -translate-x-1/2 -translate-y-1/2"
-        >
-          <CategoryCircle label="Neckband"  />
-        </div>
+        />
       </div>
     </div>
   );
 };
 
-// Reusable Petal
-const CategoryCircle = ({ label }) => {
+const CategoryItem = ({ modelPath, onClick }) => {
   return (
     <div
-      className={`w-[250px] h-[250px] rounded-full bg-transparent border border-white  cursor-pointer hover:shadow-white  font-semibold flex items-center justify-center shadow-lg`}
+      className="w-[220px] h-[220px] rounded-full bg-white/10 backdrop-blur-md shadow-lg flex items-center justify-center overflow-hidden border border-indigo-400/20 hover:border-indigo-400/50 transition-all duration-300 cursor-pointer"
+      onClick={onClick}
     >
-      {label}
+      <div className="w-[180px] h-[180px]">
+        <ModelViewer modelPath={modelPath} />
+      </div>
     </div>
   );
 };
