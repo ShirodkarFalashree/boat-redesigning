@@ -1,17 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Categories from './sections/Categories';
+import EarBuds from './sections/EarBuds';
+import Headphone from './sections/Headphone';
+import NeckBand from './sections/NeckBand';
+import PowerBank from './sections/PowerBank';
+import SmartWatch from './sections/SmartWatch';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-     
-      <div className='text-red-200 text-7xl'>helo</div>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route index element={<Categories />} />
+        <Route path="earbuds" element={<EarBuds />} />
+        <Route path="headphone" element={<Headphone />} />
+        <Route path="neckband" element={<NeckBand />} />
+        <Route path="powerbank" element={<PowerBank />} />
+        <Route path="smart-watch" element={<SmartWatch />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
