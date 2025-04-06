@@ -44,7 +44,7 @@ const HorizontalScroll = () => {
     <div>
       <div
         ref={containerRef}
-        className="flex w-[300%] h-screen flex-nowrap "
+        className="flex w-[300%] h-screen flex-nowrap bg-black "
       >
         {images.map((src, index) => (
           <section

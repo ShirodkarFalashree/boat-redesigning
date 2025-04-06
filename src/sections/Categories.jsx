@@ -10,11 +10,15 @@ function Categories() {
   useEffect(() => {
     const hasReloaded = sessionStorage.getItem('hasReloaded');
 
-    if (location.pathname === '/' && !hasReloaded) {
-      sessionStorage.setItem('hasReloaded', 'true');
-      window.location.reload();
+    if (location.pathname === '/') {
+      if (!hasReloaded) {
+        sessionStorage.setItem('hasReloaded', 'true');
+        window.location.reload();
+      }
+    } else {
+      sessionStorage.removeItem('hasReloaded'); // Clear the flag when navigating away
     }
-  }, [location])
+  }, [location]);
   return (
     <>
       {/* Show on large screens and up */}

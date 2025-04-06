@@ -9,7 +9,7 @@ import SmartWatch from "./sections/SmartWatch";
 
 function App() {
   return (
-    <div className="bg-black overflow-x-hidden">
+    <div className="bg-[#151515] overflow-x-hidden">
       <Router>
         <Routes>
           <Route index element={<Categories />} />
