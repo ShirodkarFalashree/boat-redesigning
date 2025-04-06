@@ -50,7 +50,7 @@ const HorizontalScroll = () => {
           <section
             key={index}
             ref={el => (panelsRef.current[index] = el)}
-            className="w-[800px] h-full flex justify-center items-center bg-black"
+            className="w-[800px] px-2 h-full flex justify-center items-center bg-black "
           >
             <img src={src} alt={`Slide ${index + 1}`} className="h-[80%] border-none outline-none w-auto object-contain rounded-2xl"/>
           </section>

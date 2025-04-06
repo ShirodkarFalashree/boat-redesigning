@@ -84,7 +84,7 @@ const InfiniteScrollFeedback = () => {
         }
 
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 6s linear infinite;
         }
         `}
       </style>

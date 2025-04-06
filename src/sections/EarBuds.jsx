@@ -9,17 +9,19 @@ const EarBuds = () => {
   return (
     <div>
       {/* logo section */}
-      <div className="bg-[#151515] mb-[-40px] ">
+      <div className="bg-[#151515] md:mb-[-40px] ">
         <img src={logo} className="w-[120px] pt-2 " />
       </div>
       {/* section1 */}
-      <div className="bg-[#151515] text-white h-screen w-screen font-figtree font-semibold flex items-center justify-center gap-20">
+      <div className="bg-[#151515] text-white h-screen w-screen font-figtree font-semibold flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20">
         <div className=" w-fit">
-          <img src={earbuds1} className="w-[500px] " />
+          <img src={earbuds1} className=" md:mt-0 w-[400px] md:w-[500px] " />
         </div>
-        <div className="">
-          <p className="text-[64px] font-bold mb-6  ">boAt Airdopes 141</p>
-          <div className=" text-md  flex flex-col gap-4">
+        <div className="w-[380px] md:w-fit h-fit ">
+          <p className="text-[42px] md:text-[64px] font-bold mb-6  ">
+            boAt Airdopes 141
+          </p>
+          <div className="text-lg md:text-md  flex flex-col gap-4">
             <p>✓ Long Lasting - 42 Hours Playtime</p>
             <p>✓ Beast Mode - 50ms Low Latency</p>
             <p>
@@ -28,41 +30,42 @@ const EarBuds = () => {
             <p>✓ boAt Signature Sound</p>
             <p>✓ 32db ANC ( Active Noise Cancellation )</p>
           </div>
-          <button className="border-2 border-white hover:bg-white hover:text-[#151515] px-8 py-2 mt-8 rounded-4xl flex items-center justify-center gap-2 text-md cursor-pointer transition ease-in  ">
+          <button className="border-2 border-white hover:bg-white hover:text-[#151515] px-10 py-4 md:px-8 md:py-2 mt-8 rounded-4xl flex items-center justify-center gap-2 text-md cursor-pointer transition ease-in  ">
             Buy Now <MdArrowOutward className="inline text-lg" />
           </button>
         </div>
       </div>
       {/* section2 */}
-      <div className="bg-[#151515] text-white h-screen w-screen font-figtree font-semibold flex items-center justify-center gap-20 px-10">
+      <div className="bg-[#151515] text-white min-h-screen md:h-screen w-screen font-figtree font-semibold flex flex-col-reverse md:flex-row items-center justify-center gap-20 px-4 md:px-10 pb-10">
         {/* Right Section - History */}
-        <div className="max-w-[600px] text-sm md:text-base leading-relaxed space-y-4">
-          <p className="text-[42px] font-bold mb-6  ">
-            About boAt Airdopes 141
+        <div className="max-w-[600px] text-sm md:text-base leading-relaxed space-y-4 ">
+          <p className="text-[42px] font-bold mb-6 leading-[54px] ">
+            About
+            <br className="md:hidden" /> boAt Airdopes 141
           </p>
 
-          <p>
+          <p className="text-lg">
             <strong>The Origin:</strong> Born in the heart of Mumbai, boAt began
             a revolution in sound. From college streets to corporate beats, the
             Airdopes 141 quickly became an icon among the youth.
           </p>
-          <p>
+          <p className="text-lg">
             <strong>The Soundwave Shift:</strong> Boasting{" "}
             <span className="text-[#00ADB5]">boAt Signature Sound</span>, it
             elevated every playlist — whether it's chill vibes or power
             workouts.
           </p>
-          <p>
+          <p className="text-lg">
             <strong>Tech that Talks:</strong> ENx™ Quad Mics for seamless
             calling, Beast Mode for gaming, and ANC to cut through the chaos —
             these weren’t just features, they were lifestyle upgrades.
           </p>
-          <p>
+          <p className="text-lg">
             <strong>Power Packed:</strong> With a staggering 42-hour battery
             life, these buds stayed with you — from first commute to final binge
             session.
           </p>
-          <p>
+          <p className="text-lg">
             <strong>Built for India:</strong> Sweat? Dust? Mumbai trains?
             Airdopes 141 kept up with everything, just like its users.
           </p>
