@@ -1,9 +1,33 @@
-import React from 'react'
+import React from 'react';
+import MobCategories from './mobCategories';
+import LapCategories from './LapCategories';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const Categories = () => {
+function Categories() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const hasReloaded = sessionStorage.getItem('hasReloaded');
+
+    if (location.pathname === '/' && !hasReloaded) {
+      sessionStorage.setItem('hasReloaded', 'true');
+      window.location.reload();
+    }
+  }, [location])
   return (
-    <div>Categories</div>
-  )
-}
+    <>
+      {/* Show on large screens and up */}
+      <div className="hidden md:block">
+        <LapCategories />
+      </div>
 
-export default Categories
+      {/* Show only on small screens */}
+      <div className="block md:hidden">
+        <MobCategories />
+      </div>
+    </>
+  );
+};
+
+export default Categories;
