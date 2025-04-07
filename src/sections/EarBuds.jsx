@@ -5,6 +5,78 @@ import HorizontalScrollSection from "../components/HorizontalScroll";
 import logo from "../assets/logo.png";
 import HorizontalScroll from "../components/HorizontalScroll";
 import InfiniteScrollFeedback from "../components/Feedback";
+
+import earbuds2 from "../assets/earbuds2.jpg"
+import earbuds3 from "../assets/earbuds3.jpg"
+import earbuds4 from "../assets/earbuds4.jpg"
+import earbuds5 from "../assets/earbuds5.jpg"
+import earbuds6 from "../assets/earbuds6.jpg"
+
+const testimonials = [
+  {
+    quote:
+      "Battery life is insane! I didn’t expect it to last this long. I’ve been using it constantly for music, calls, and even Netflix binges — and it still keeps going. No more running for the charger every few hours!",
+    author: "Rohan Mehta",
+    book: "Verified Buyer",
+  },
+  {
+    quote:
+      "The bass is just *mind-blowing*. You can literally feel every beat thumping in your ears. Whether it’s hip-hop, EDM, or even Bollywood tracks, the sound quality takes everything to the next level.",
+    author: "Aarav Sharma",
+    book: "Music Enthusiast",
+  },
+  {
+    quote:
+      "I work from home and take a lot of client calls, and I’m honestly impressed with how clear my voice sounds even when there's background noise. The noise cancellation is surprisingly effective for this price!",
+    author: "Sneha Kulkarni",
+    book: "Remote Worker",
+  },
+  {
+    quote:
+      "If you’re a mobile gamer, trust me, these are a must-have. I’ve tried them with PUBG and COD, and the low latency mode really reduces the lag — every gunshot and footstep feels real-time!",
+    author: "Kunal Jadhav",
+    book: "Mobile Gamer",
+  },
+  {
+    quote:
+      "The touch controls are so intuitive. Play, pause, change tracks, answer calls — all with just a tap. It feels futuristic and makes life so much easier when I’m on the move or working out.",
+    author: "Ishita Rane",
+    book: "College Student",
+  },
+  {
+    quote:
+      "I wasn’t sure what to expect from earbuds in this price range, but boAt totally surprised me. The build quality, the features, and the audio experience are honestly better than some premium brands I’ve used.",
+    author: "Manav Desai",
+    book: "Budget Buyer",
+  },
+  {
+    quote:
+      "I wear them during my workouts, and they stay in place perfectly. No falling out, no discomfort. Plus, they’re sweat-resistant — so I can focus on my routine without worrying.",
+    author: "Tanvi Nair",
+    book: "Fitness Enthusiast",
+  },
+  {
+    quote:
+      "The moment I open the case, it connects to my phone in seconds. No manual pairing nonsense. This seamless experience really makes a difference when I’m in a rush.",
+    author: "Ankit Verma",
+    book: "Tech Lover",
+  },
+  {
+    quote:
+      "I take these with me every time I travel. They cancel out just enough noise on flights or trains, and the long battery life means I can chill with my playlist or movies for hours.",
+    author: "Priya Shetty",
+    book: "Frequent Traveler",
+  },
+];
+
+const images = [
+    earbuds2,
+    earbuds3,
+    earbuds4,
+    earbuds5,
+    earbuds6,
+];
+
 const EarBuds = () => {
   return (
     <div>
@@ -76,10 +148,10 @@ const EarBuds = () => {
       </div>
       {/* HorizontalScroll */}
       <div>
-        <HorizontalScroll />
+        <HorizontalScroll images={images}/>
       </div>
       <div>
-        <InfiniteScrollFeedback />
+        <InfiniteScrollFeedback testimonials={testimonials} />
       </div>
       {/* end section */}
       <div>

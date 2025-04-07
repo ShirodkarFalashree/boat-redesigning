@@ -1,22 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import earbuds2 from "../assets/earbuds2.jpg"
-import earbuds3 from "../assets/earbuds3.jpg"
-import earbuds4 from "../assets/earbuds4.jpg"
-import earbuds5 from "../assets/earbuds5.jpg"
-import earbuds6 from "../assets/earbuds6.jpg"
+
 gsap.registerPlugin(ScrollTrigger);
 
-const images = [
-    earbuds2,
-    earbuds3,
-    earbuds4,
-    earbuds5,
-    earbuds6,
-];
 
-const HorizontalScroll = () => {
+
+const HorizontalScroll = ({images}) => {
   const containerRef = useRef(null);
   const panelsRef = useRef([]);
 
